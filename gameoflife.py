@@ -1,18 +1,10 @@
-from PySide import*
-from PySide.QtCore import*
-from PySide.QtGui import*
-from model import Model
-app = QApplication([])
+from Models import*
+from Libs import*
+from Controllers import*
+from Views import*
 
-class MainWindow(QWidget):
-    def __init__(self):
-        super(MainWindow, self).__init__()
-        layout = QBoxLayout(QBoxLayout.TopToBottom, self)
+import sys
+from time import*
 
-        model = Model()
-        model.dimensions = [2,5]
-        print(model.dimensions)
-
-window = MainWindow()
-window.show()
-app.exec_()
+controller = Controller()
+controller.start_page()

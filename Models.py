@@ -1,12 +1,9 @@
-"""Module for all Models"""
-class Model:
-    """The Model to store Data"""
-
+class Grid():
     def __init__(self):
         self.__grid = []
+        self.dimensions = [5,5]
 
     def set_dimensions(self, dimensions):
-        """Set the Dimesions of the grid"""
         self.__grid = []
         for number in range(dimensions[0]):
             self.__grid.append([])
@@ -14,7 +11,6 @@ class Model:
                 self.__grid[-1].append(0)
 
     def get_dimensions(self):
-        """Get"""
-        return self.__grid
+        return [len(self.__grid), len(self.__grid[0])]
 
     dimensions = property(get_dimensions, set_dimensions)
